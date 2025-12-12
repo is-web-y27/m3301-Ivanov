@@ -1,5 +1,9 @@
+/* шрифты  */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
+
+
+
 
 body {
   background: #1a1a1a;
@@ -8,12 +12,14 @@ body {
   margin: 0;
 }
 
-
+/* общий вид основных блоков ( */
 .header,
 .article,
 .aside,
 .section,
-.footer {
+.footer,
+.gallery,
+.news {
   background: #111;
   border-radius: 28px;
   box-shadow: 0 0 24px 0 #222 inset, 0 2px 18px 0 #000;
@@ -22,7 +28,112 @@ body {
   max-width: 800px;
 }
 
-/* картинка */
+/* стиль заголовков блоков */
+.header__title,
+.section__title,
+.article__title,
+.aside__title,
+.footer__title,
+.gallery__title,
+.news__title {
+  font-family: 'Caveat', cursive;
+  color: #e52d84;
+  font-size: 2.1em;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.65em;
+  text-align: center;
+}
+
+
+/* хедер*/
+
+/* sticky-элемент*/
+.header {
+  position: sticky;      
+  top: 0;
+  z-index: 100;
+}
+
+.header__subtitle {
+  font-family: 'Montserrat', Arial, sans-serif;
+  color: #ddd;
+  text-align: center;
+  font-size: 1.2em;
+  margin-bottom: 1.4em;
+}
+
+/* Горизонтальный ряд ссылок меню */
+.header__nav-list {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.header__nav-item {
+  margin: 0;
+}
+
+/* изменения при наведении*/
+.header__nav-link {
+  font-family: 'Montserrat', Arial, sans-serif;
+  color: #fff;
+  background: transparent;
+  text-decoration: none;
+  padding: 7px 16px;
+  border-radius: 18px;
+  font-size: 1em;
+  font-weight: 400;
+  text-transform: uppercase;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+/* hover‑состояние */
+.header__nav-link:hover {
+  background: #1f1f1f;
+  color: #fff;
+  box-shadow: 0 0 8px rgba(229, 45, 132, 0.5);
+  border: 1px solid #e52d84;
+}
+
+/* активный пункт (как на картинке) */
+.header__nav-link--active {
+  background: #e52d84;
+  color: #fff;
+  border: 1px solid #e52d84;
+}
+
+
+/* grid-ряд*/
+
+.gallery__title {
+  text-align: left;
+  margin-bottom: 12px;
+}
+
+/* Grid-сетка*/
+.gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 14px;
+}
+
+.gallery__item {
+  padding: 8px 10px;
+  border-radius: 14px;
+  background: #1f1f1f;
+  font-size: 0.95em;
+}
+
+
+
 .article__figure {
   background: none;
   border-radius: 28px;
@@ -35,7 +146,7 @@ body {
   position: relative;
 }
 
-
+/* изображение картины */
 .article__image {
   display: block;
   width: 100%;
@@ -46,6 +157,7 @@ body {
   margin: 0 auto;
 }
 
+/* подпись к картине */
 .article__figcaption {
   background: rgba(25, 25, 25, 0.7);
   color: #fff;
@@ -54,112 +166,22 @@ body {
   text-align: center;
   font-weight: bold;
   letter-spacing: 0.042em;
-  /* Запаска */
-  font-family: 'Montserrat', Arial; 
+  font-family: 'Montserrat', Arial, sans-serif;
   font-size: 1.1em;
   margin-top: 12px;
   width: 100%;
   display: block;
 }
 
-/* заголовки */
-.header__title,
-.section__title,
-.article__title,
-.aside__title,
-.footer__title {
-  font-family: 'Caveat', cursive;
-  color: #e52d84;
-  font-size: 2.1em;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  margin-bottom: 0.65em;
-  text-align: center;
-}
-
-.header__subtitle {
-  font-family: 'Montserrat', Arial;
-  color: #ddd;
-  text-align: center;
-  font-size: 1.2em;
-  margin-bottom: 1.4em;
-}
-
-.header__nav-list {
-  display: flex;
-  gap: 18px;
-  justify-content: center;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-.header__nav-link {
-  font-family: 'Montserrat', Arial;
-  color: #fff;
-  background: transparent;
-  text-decoration: none;
-  padding: 7px 16px;
-  border-radius: 18px;
-  font-size: 1em;
-  font-weight: 400;
-  transition: background 0.2s;
-  text-transform: uppercase;
-  /* регистр */
-}
-
-.header__nav-link:hover {
-  background: #e52d84;
-  color: #fff;
-}
-
-/* блок цитаты и контактов */
-.aside__blockquote {
-  font-family: 'Caveat', cursive;
-  color: #ddd;
-  font-size: 1.6em;
-  background: none;
-  border: none;
-  margin: 0 0 8px 0;
-  text-align: center;
-}
-
-.aside cite {
-  font-family: 'Montserrat', Arial;
-  color: #fff;
-  font-size: 0.85em;
-  font-weight: 700;
-  display: block;
-  text-align: right;
-}
-
-.footer {
-  text-align: center;
-  color: #e52d84;
-  border-radius: 30px;
-  font-size: 1.1em;
-}
-
-.footer__email {
-  color: #e52d84;
-  text-decoration: none;
-  font-weight: 700;
-  font-family: 'Montserrat', Arial;
-}
-
-.footer__email:hover {
-  text-decoration: underline;
-  color: #fff;
-}
-
-.article__description,
-.section,
-.article__list {
+/* текст описания и список */
+.article__description {
   color: #fff;
   font-size: 1.1em;
 }
 
 .article__list {
+  color: #fff;
+  font-size: 1.1em;
   margin-top: 8px;
   padding-left: 24px;
 }
@@ -168,7 +190,9 @@ body {
   margin-bottom: 0.5em;
 }
 
-/*эффекты все*/
+
+/* ээфекты*/
+
 em {
   color: #e5e0dd;
   font-style: italic;
@@ -186,6 +210,73 @@ ins {
   font-weight: 700;
 }
 
+
+/* news */
+
+.news__title {
+  text-align: left;
+  margin-bottom: 12px;
+}
+
+.news__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9em;
+}
+
+.news__table thead tr,
+.news__table tbody tr {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+}
+
+.news__table thead tr {
+  background: #e52d84;
+  color: #fff;
+}
+
+.news__table th,
+.news__table td {
+  padding: 6px 10px;
+  text-align: left;
+}
+
+.news__table tbody tr:nth-child(odd) {
+  background: #202020;
+}
+
+.news__table tbody tr:nth-child(even) {
+  background: #2a2a2a;
+}
+
+
+/* цитата */
+
+.aside__title {
+}
+
+.aside__blockquote {
+  font-family: 'Caveat', cursive;
+  color: #ddd;
+  font-size: 1.6em;
+  background: none;
+  border: none;
+  margin: 0 0 8px 0;
+  text-align: center;
+}
+
+.aside cite {
+  font-family: 'Montserrat', Arial, sans-serif;
+  color: #fff;
+  font-size: 0.85em;
+  font-weight: 700;
+  display: block;
+  text-align: right;
+}
+
+
+/* о нас */
+
 .section__title {
   color: #e52d84;
   margin-bottom: 0.45em;
@@ -202,3 +293,87 @@ ins {
   margin-bottom: 0.34em;
 }
 
+
+/* футтер */
+
+.footer {
+  text-align: center;
+  color: #e52d84;
+  border-radius: 30px;
+  font-size: 1.1em;
+}
+
+.footer__email {
+  color: #e52d84;
+  text-decoration: none;
+  font-weight: 700;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.footer__email:hover {
+  text-decoration: underline;
+  color: #fff;
+}
+
+/* баннер, который скрывается на маленьких экранах */
+.footer__banner {
+  margin-top: 14px;
+  padding: 10px 14px;
+  border-radius: 18px;
+  background: #e52d84;
+  color: #fff;
+  font-size: 0.9em;
+}
+
+
+/* адаптив под устройства */
+
+/* Смартфон: до 768px */
+@media (max-width: 768px) {
+  .header,
+  .article,
+  .aside,
+  .section,
+  .footer,
+  .gallery,
+  .news {
+    margin: 16px;
+    padding: 16px 20px;
+    max-width: none;
+  }
+
+  .news__table thead tr,
+  .news__table tbody tr {
+    grid-template-columns: 0.9fr 2.1fr 1fr;
+  }
+
+  .footer__banner {
+    display: none;
+  }
+}
+
+/* ноутбук, около Full HD (от 1024 до 1919) */
+@media (min-width: 1024px) and (max-width: 1919px) {
+  .header,
+  .article,
+  .aside,
+  .section,
+  .footer,
+  .gallery,
+  .news {
+    max-width: 900px;
+  }
+}
+
+/* широкие мониторы 21:9 */
+@media (min-width: 1920px) {
+  .header,
+  .article,
+  .aside,
+  .section,
+  .footer,
+  .gallery,
+  .news {
+    max-width: 1100px;
+  }
+}
