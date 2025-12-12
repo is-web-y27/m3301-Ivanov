@@ -5,41 +5,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Моя галерея — Inspire Engine</title>
   <link rel="stylesheet" href="styles.css">
-  <script src="js/common.js" defer></script>
+  <link rel="stylesheet" href="gallery-api.css">
+  <script src="common.js" defer></script>
+  <script src="gallery-api.js" defer></script>
 </head>
 <body>
 <header class="header">
   <h1 class="header__title">Inspire Engine</h1>
   <p class="header__subtitle">Вдохновение для художников</p>
-    <nav>
+  <nav>
     <ul class="header__nav-list">
-        <li class="header__nav-item">
-        <a class="header__nav-link" href="index.html">Главная</a>
-        </li>
-        <li class="header__nav-item">
-        <a class="header__nav-link" href="my-gallery.html">Моя галерея</a>
-        </li>
-        <li class="header__nav-item">
-        <a class="header__nav-link" href="search.html">Поиск</a>
-        </li>
-        <li class="header__nav-item">
-        <a class="header__nav-link" href="settings.html">Настройки</a>
-        </li>
+      <li class="header__nav-item"><a class="header__nav-link" href="index.html">Главная</a></li>
+      <li class="header__nav-item"><a class="header__nav-link header__nav-link--active" href="my-gallery.html">Моя галерея</a></li>
+      <li class="header__nav-item"><a class="header__nav-link" href="search.html">Поиск</a></li>
+      <li class="header__nav-item"><a class="header__nav-link" href="settings.html">Настройки</a></li>
     </ul>
-    </nav>
+  </nav>
 </header>
 
 <main>
-  <section class="gallery">
-    <h2 class="gallery__title">Моя галерея</h2>
-    <div class="gallery__grid">
-      <span class="gallery__item">Мой арт 1</span>
-      <span class="gallery__item">Мой арт 2</span>
-      <span class="gallery__item">Мой арт 3</span>
-      <span class="gallery__item">Мой арт 4</span>
-      <span class="gallery__item">Мой арт 5</span>
-      <span class="gallery__item">Мой арт 6</span>
+  <section class="gallery-section">
+    <h2 class="section__title">Галерея картин</h2>
+    
+    <!-- кнопка загрузки -->
+    <div class="gallery-controls">
+      <button id="loadGalleryBtn" class="btn btn--primary">Загрузить картины</button>
     </div>
+
+    <!-- прелоадер (скрыт по умолчанию) -->
+    <div id="galleryLoader" class="gallery-loader" hidden>
+      <div class="spinner"></div>
+      <p>Загрузка картин...</p>
+    </div>
+
+    <!-- сообщение об ошибке (скрыто по умолчанию) -->
+    <div id="galleryError" class="gallery-error" hidden>
+      <p id="galleryErrorMessage"></p>
+    </div>
+
+    <!-- контейнер для галереи -->
+    <div id="galleryContainer" class="gallery-grid" hidden></div>
   </section>
 </main>
 
@@ -50,5 +55,15 @@
   </p>
   <div class="footer__banner">Рекламный баннер</div>
 </footer>
+
+<!-- шаблон для одной фотографии -->
+<template id="userTemplate">
+  <div class="user-card">
+    <img class="user-card__avatar" src="" alt="фотография">
+    <h3 class="user-card__name"></h3>
+    <p class="user-card__email"></p>
+  </div>
+</template>
+
 </body>
 </html>
