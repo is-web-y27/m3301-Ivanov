@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="keywords" content="искусство, картины, художники, референсы">
+  <meta name="description" content="Inspire Engine — вдохновение для художников и любителей искусства">
+  <title>Inspire Engine</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="js/common.js" defer></script>
+</head>
+<body>
+<header class="header">
+  <!-- закреплённый элемент -->
+  <h1 class="header__title">Inspire Engine</h1>
+  <p class="header__subtitle">Вдохновение для художников</p>
+  <nav>
+    <ul class="header__nav-list">
+      <li class="header__nav-item">
+        <a class="header__nav-link" href="painting-of-day.html">Картина дня</a>
+      </li>
+      <li class="header__nav-item">
+        <a class="header__nav-link" href="my-gallery.html">Моя галерея</a>
+      </li>
+      <li class="header__nav-item">
+        <a class="header__nav-link" href="search.html">Поиск</a>
+      </li>
+      <li class="header__nav-item">
+        <a class="header__nav-link" href="settings.html">Настройки</a>
+      </li>
+    </ul>
+  </nav>
+
+</header>
+
+<main>
+  <!-- галерея на grid -->
+  <section class="gallery">
+    <h2 class="gallery__title">Галерея референсов</h2>
+    <div class="gallery__grid">
+      <span class="gallery__item">Арт 1</span>
+      <span class="gallery__item">Арт 2</span>
+      <span class="gallery__item">Арт 3</span>
+      <span class="gallery__item">Арт 4</span>
+    </div>
+  </section>
+
+  <article id="art" class="article">
+    <h2 class="article__title">Избранная картина</h2>
+    <figure class="article__figure">
+      <img
+        class="article__image"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Edgar_Germain_Hilaire_Degas_076.jpg/1920px-Edgar_Germain_Hilaire_Degas_076.jpg"
+        alt="Эдгар Дега, Танцовщицы в фиолетовых юбках">
+      <figcaption class="article__figcaption">
+        Эдгар Дега<br>
+        <strong>Танцовщицы в фиолетовых юбках</strong><br>
+        1897
+      </figcaption>
+    </figure>
+    <p class="article__description">
+      Краткое описание: яркая текстура, динамичные мазки, глубокая палитра.
+      <em>Полезно для изучения света и цвета.</em>
+    </p>
+    <ul class="article__list">
+      <li>
+        <strong>Масляная живопись</strong>
+        <em>Акварель</em>
+        <del>Устаревшие методы</del>
+        <ins>Классическое искусство</ins>
+      </li>
+    </ul>
+  </article>
+
+  <!-- таблица со строкой-заголовком, чет/нечет-->
+  <section class="news">
+    <h2 class="news__title">Подборка новостей</h2>
+    <table class="news__table">
+      <thead>
+      <tr>
+        <th>Дата</th>
+        <th>Новость</th>
+        <th>Автор</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>11.12.2025</td>
+        <td>Новая выставка Дега</td>
+        <td>Артем</td>
+      </tr>
+      <tr>
+        <td>10.12.2025</td>
+        <td>Вебинар по акварели</td>
+        <td>Vonavi</td>
+      </tr>
+      <tr>
+        <td>09.12.2025</td>
+        <td>Конкурс референсов</td>
+        <td>Искры</td>
+      </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <aside id="quote" class="aside">
+    <h2 class="aside__title">Цитата дня</h2>
+    <blockquote class="aside__blockquote">
+      Искусство — это не правда, а поиск истины.
+    </blockquote>
+    <cite>Civization IV</cite>
+  </aside>
+
+  <section id="about" class="section">
+    <h2 class="section__title">О нас</h2>
+    <!-- вертикальный ряд элементов -->
+    <p>
+      <strong>Inspire Engine</strong> собирает качественные референсы для художников и любителей искусства.
+    </p>
+    <p>Возможности платформы:</p>
+    <ol class="section__list">
+      <li>Галерея классических картин</li>
+      <li>Анализ техник мастеров</li>
+      <li>Современные референсы</li>
+      <li>Инструменты для художников</li>
+      <li>Сообщество творцов</li>
+      <li>Обучение и вебинары</li>
+    </ol>
+  </section>
+</main>
+
+<footer id="contacts" class="footer">
+  <h2 class="footer__title">Контакты</h2>
+  <p>Email:
+    <a class="footer__email" href="mailto:vonaviartem@post.vtepyat">
+      vonaviartem@post.vtepyat
+    </a>
+  </p>
+  <!-- элемент, который скрывается на маленьких мониторах -->
+  <div class="footer__banner">Рекламный баннер</div>
+</footer>
+</body>
+</html>
