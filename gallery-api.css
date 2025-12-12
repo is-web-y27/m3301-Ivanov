@@ -1,0 +1,172 @@
+/* стиль для галереи */
+
+.gallery-section {
+  background: #111;
+  border-radius: 28px;
+  box-shadow: 0 0 24px 0 #222 inset, 0 2px 18px 0 #000;
+  margin: 30px auto;
+  padding: 18px 66px;
+  max-width: 800px;
+}
+
+.section__title {
+  font-family: 'Caveat', cursive;
+  color: #e52d84;
+  font-size: 2.1em;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+.gallery-controls {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.btn {
+  font-family: 'Montserrat', Arial, sans-serif;
+  color: #fff;
+  background: linear-gradient(135deg, #e52d84 0%, #c71e6f 100%);
+  border: 1px solid #e52d84;
+  padding: 12px 32px;
+  border-radius: 18px;
+  font-size: 1em;
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.25s ease;
+  box-shadow: 0 0 12px rgba(229, 45, 132, 0.3);
+}
+
+.btn:hover {
+  background: linear-gradient(135deg, #c71e6f 0%, #a01659 100%);
+  box-shadow: 0 0 20px rgba(229, 45, 132, 0.6);
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn--primary {
+  background: linear-gradient(135deg, #e52d84 0%, #c71e6f 100%);
+}
+
+/* прелоадер */
+
+.gallery-loader {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #333;
+  border-top: 4px solid #e52d84;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 16px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.gallery-loader p {
+  color: #ddd;
+  font-size: 1.1em;
+  margin: 0;
+}
+
+/* сообщение об ошибке */
+
+.gallery-error {
+  background: rgba(255, 84, 89, 0.1);
+  border: 1px solid #ff5459;
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.gallery-error p {
+  color: #ff7a7f;
+  font-size: 1.1em;
+  margin: 0;
+  font-weight: 600;
+}
+
+/* сетка фотографий */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+  padding: 20px 0;
+}
+
+.user-card {
+  background: #1f1f1f;
+  border: 1px solid #333;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.user-card:hover {
+  border-color: #e52d84;
+  box-shadow: 0 0 12px rgba(229, 45, 132, 0.3);
+  transform: translateY(-4px);
+}
+
+.user-card__avatar {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+}
+
+.user-card__name {
+  padding: 12px;
+  color: #fff;
+  font-size: 0.95em;
+  font-weight: 600;
+  margin: 0;
+  text-align: center;
+  border-bottom: 1px solid #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.user-card__email {
+  padding: 8px 12px;
+  color: #ddd;
+  font-size: 0.85em;
+  margin: 0;
+  text-align: center;
+}
+
+/* мобильный адаптив */
+
+@media (max-width: 768px) {
+  .gallery-section {
+    margin: 16px;
+    padding: 16px 20px;
+    max-width: none;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+  }
+
+  .btn {
+    padding: 10px 24px;
+    font-size: 0.95em;
+  }
+}
